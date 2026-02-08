@@ -1,0 +1,43 @@
+[
+  {
+    "title": "Senior DevOps & Backend Engineer",
+    "company": "BPCE",
+    "city": "Paris, France",
+    "startDate": "May 2024",
+    "endDate": "Present",
+    "tasks": [
+      "Designed and operated secure CI/CD infrastructure compliant with enterprise-level security standards, enabling frequent production releases.",
+      "Developed Python automation APIs to reduce manual mainframe operations by 400+ incidents per year.",
+      "Built and deployed web services on OpenShift, improving service availability and user autonomy.",
+      "Implemented Ansible automation for mainframe certificate management with full audit traceability.",
+      "Collaborated with security and infrastructure teams to define architecture decisions focused on scalability and compliance."
+    ]
+  },
+  {
+    "title": "DevOps Engineer",
+    "company": "Tediber",
+    "city": "Paris, France",
+    "startDate": "Apr. 2023",
+    "endDate": "Apr. 2024",
+    "tasks": [
+      "Optimized PHP API performance and reduced response time through SQL and system-level enhancements.",
+      "Reduced Docker image build times by optimizing image layers and CI caching strategies.",
+      "Built automation scripts for cloud storage provisioning and lifecycle rules using Python.",
+      "Managed and scaled GitLab CI runners on GKE, ensuring highly available pipeline executions.",
+      "Implemented migrations to Cloud SQL and managed production-grade CI/CD workflows."
+    ]
+  },
+  {
+    "title": "Junior DevOps / Python Developer",
+    "company": "Worldline",
+    "city": "Lille, France",
+    "startDate": "Mar. 2020",
+    "endDate": "Apr. 2023",
+    "tasks": [
+      "Designed and maintained CI/CD pipelines with GitLab CI across multi-environment deployments.",
+      "Administered monitoring systems using Zabbix and Grafana for production reliability.",
+      "Contributed to application-level automation in Python and Golang.",
+      "Oversaw container orchestration via Kubernetes and Helm in a production environment."
+    ]
+  }
+]

@@ -1,0 +1,47 @@
+@theme {
+  /* ---------- Colors ---------- */
+  --color-bg: #0b1220;
+  --color-surface: #121a2a;
+  --color-primary: #e6eaf2;
+  --color-secondary: #9aa4bf;
+  --color-divider: #1e2a44;
+  --color-accent: #4fd1c5;
+
+  /* ---------- Typography ---------- */
+  --font-sans: 'Inter', system-ui, -apple-system;
+
+  --text-h1: 52px;
+  --text-h1--line-height: 60px;
+  --text-h1--font-weight: 700;
+
+  --text-h2: 32px;
+  --text-h2--line-height: 40px;
+  --text-h2--font-weight: 600;
+
+  --text-h3: 20px;
+  --text-h3--line-height: 28px;
+  --text-h3--font-weight: 600;
+
+  --text-body: 16px;
+  --text-body--line-height: 26px;
+
+  --text-small: 14px;
+  --text-small--line-height: 22px;
+
+  --text-caption: 12px;
+  --text-caption--line-height: 18px;
+
+  /* ---------- Spacing ---------- */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 40px;
+  --spacing-xl: 64px;
+
+  /* ---------- Radius ---------- */
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-pill: 999px;
+}

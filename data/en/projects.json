@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Mainframe Automation API",
+    "description": "Built a Python API service automating user and dataset management on mainframes, reducing over 400 manual incidents per year and enabling secure programmatic access.",
+    "stack": ["Python", "REST API", "Jenkins"]
+  },
+  {
+    "title": "Secure CI/CD Platform",
+    "description": "Architected and deployed CI/CD environments serving multiple teams, fully compliant with enterprise security standards, enabling repeatable release automation and rollback strategies.",
+    "stack": ["Jenkins", "XL Deploy", "XL Release", "Docker", "Openshift"]
+  },
+  {
+    "title": "Cloud Deployment & Optimization",
+    "description": "Optimized cloud workloads including container runtimes, storage management, and multi-environment delivery via GitLab CI and GKE clusters.",
+    "stack": ["GCP", "Kubernetes", "Gitlab CI", "PHP"]
+  }
+]
