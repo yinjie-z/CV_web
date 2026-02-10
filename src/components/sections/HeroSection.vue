@@ -26,7 +26,10 @@ if (lang === 'en') {
     <div class="flex flex-col md:flex-row gap-12 items-start justify-between">
       <div class="flex-1 space-y-8 z-10 text-left">
         <div class="space-y-4">
-          <h1 class="text-5xl md:text-7xl font-bold text-white tracking-tight uppercase">
+          <h1
+            class="text-5xl md:text-7xl font-bold text-white tracking-tight uppercase"
+            data-test="lang"
+          >
             {{ localJson.name }}
           </h1>
           <p class="text-2xl md:text-3xl text-slate-300 font-light">
