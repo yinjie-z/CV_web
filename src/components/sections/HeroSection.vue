@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import jsonHeroEn from '@data/en/hero.json'
 import jsonHeroFr from '@data/fr/hero.json'
-import { reactive } from 'vue'
+import ProfileImage from '@/components/common/ProfileImage.vue'
+import QuickFacts from '@/components/sections/QuickFactSection.vue'
+import { reactive, inject } from 'vue'
 
-const props = defineProps(['lang'])
+const lang = inject('lang') as string
 const localJson = reactive<Hero>({} as Hero)
 interface Hero {
   name: string
@@ -12,23 +14,50 @@ interface Hero {
   stack: string[]
 }
 
-if (props.lang === 'en') {
+if (lang === 'en') {
   Object.assign(localJson, jsonHeroEn)
-} else if (props.lang === 'fr') {
+} else if (lang === 'fr') {
   Object.assign(localJson, jsonHeroFr)
 }
 </script>
 
 <template>
-  <div>
-    <div>{{ localJson.name }}</div>
-    <div>{{ localJson.title }}</div>
-    <div>{{ localJson.summary }}</div>
-    <div v-for="(value, index) in localJson.stack" :key="index">
-      {{ value }}
+  <div class="relative max-w-7xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row gap-12 items-start justify-between">
+      <div class="flex-1 space-y-8 z-10 text-left">
+        <div class="space-y-4">
+          <h1 class="text-5xl md:text-7xl font-bold text-white tracking-tight uppercase">
+            {{ localJson.name }}
+          </h1>
+          <p class="text-2xl md:text-3xl text-slate-300 font-light">
+            {{ localJson.title }}
+          </p>
+          <p class="text-lg text-slate-300 -mt-2 font-light">{{ localJson.summary }}</p>
+
+          <div class="flex flex-wrap items-center gap-x-2 text-lg text-slate-400">
+            <template v-for="(tech, index) in localJson.stack" :key="index">
+              <span>{{ tech }}</span>
+              <span v-if="index < localJson.stack.length - 1" class="text-slate-600">•</span>
+            </template>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <button
+            class="bg-blue-700 hover:bg-blue-600 text-white px-8 py-3 rounded-md font-semibold transition-all"
+          >
+            Downaload CV
+          </button>
+        </div>
+
+        <div class="mt-12">
+          <QuickFacts />
+        </div>
+      </div>
+
+      <div class="relative">
+        <ProfileImage />
+      </div>
     </div>
-  </div>
-  <div>
-    <img src="/img/profile.jpg" alt="ZHAO Yinjie" />
   </div>
 </template>

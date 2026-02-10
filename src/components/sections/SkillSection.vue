@@ -1,27 +1,55 @@
 <script setup lang="ts">
 import jsonSkillEn from '@data/en/skills.json'
 import jsonSkillFr from '@data/fr/skills.json'
-import { reactive } from 'vue'
+import { reactive, inject } from 'vue'
+import LanguageSection from './LanguageSection.vue'
 
-const props = defineProps(['lang'])
+const lang = inject('lang') as string
 const localJson = reactive<Skill[]>([])
 interface Skill {
   category: string
   skills: string[]
 }
 
-if (props.lang === 'en') {
+if (lang === 'en') {
   Object.assign(localJson, jsonSkillEn)
-} else if (props.lang === 'fr') {
+} else if (lang === 'fr') {
   Object.assign(localJson, jsonSkillFr)
 }
 </script>
 
 <template>
-  <div v-for="item in localJson" :key="item.category">
-    <h3>{{ item.category }}</h3>
-    <ul>
-      <li v-for="skill in item.skills" :key="skill">{{ skill }}</li>
-    </ul>
+  <div>
+    <div class="mb-16 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight uppercase">
+        Technical <span class="text-blue-500">Stack</span>
+      </h2>
+      <div class="h-1 w-20 bg-blue-600 mx-auto mt-4 rounded-full"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div
+        v-for="item in localJson"
+        :key="item.category"
+        class="group relative p-8 rounded-2xl bg-slate-900/50 border border-white/5 hover:border-blue-500/30 transition-all duration-300 backdrop-blur-sm"
+      >
+        <h3 class="text-lg font-bold text-white mb-6 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+          {{ item.category }}
+        </h3>
+
+        <ul class="flex flex-wrap gap-2">
+          <li
+            v-for="skill in item.skills"
+            :key="skill"
+            class="px-3 py-1.5 rounded-lg bg-white/3 border border-white/10 text-slate-300 text-xs font-medium hover:bg-blue-500/10 hover:text-blue-400 hover:border-blue-500/40 transition-all cursor-default"
+          >
+            {{ skill }}
+          </li>
+        </ul>
+      </div>
+
+      <LanguageSection />
+    </div>
   </div>
 </template>

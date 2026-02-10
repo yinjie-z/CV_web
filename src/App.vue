@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import HeroSection from '@/components/sections/HeroSection.vue'
-import QuickFacts from '@/components/sections/QuickFactSection.vue'
-import ExperienceSection from './components/sections/ExperienceSection.vue'
-import ProjectSection from './components/sections/ProjectSection.vue'
-import SkillSection from './components/sections/SkillSection.vue'
-import LanguageSection from './components/sections/LanguageSection.vue'
-import ContactSection from './components/sections/ContactSection.vue'
+import { provide } from 'vue'
+import HeroBlock from '@/components/blocks/HeroBlock.vue'
+import ExperienceBlock from './components/blocks/ExperienceBlock.vue'
+import ProjectBlock from './components/blocks/ProjectBlock.vue'
+import SkillBlock from './components/blocks/SkillBlock.vue'
+import ContactBlock from './components/blocks/ContactBlock.vue'
+
+provide('lang', 'en')
 </script>
 
 <template>
@@ -14,13 +15,15 @@ import ContactSection from './components/sections/ContactSection.vue'
       <nav></nav>
     </div>
   </header>
-  <body>
-    <HeroSection lang="en" />
-    <QuickFacts lang="en" />
-    <ExperienceSection lang="en" />
-    <ProjectSection lang="en" />
-    <SkillSection lang="en" />
-    <LanguageSection lang="en" />
-    <ContactSection lang="en" />
+  <body class="caret-transparent cursor-default">
+    <main
+      class="min-h-screen bg-navy-900 text-slate-300 font-sans selection:bg-brand-primary/30 bg-slate-950"
+    >
+      <HeroBlock />
+      <ExperienceBlock />
+      <ProjectBlock />
+      <SkillBlock />
+      <ContactBlock />
+    </main>
   </body>
 </template>
