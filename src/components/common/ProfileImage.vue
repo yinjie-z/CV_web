@@ -1,6 +1,6 @@
 <template>
   <div class="relative flex-1 flex justify-center items-end h-125">
-    <div class="absolute inset-0 bg-blue-600/10 blur-[100px] rounded-full scale-150"></div>
+    <div class="absolute inset-0 bg-blue-600/10 blur-[100px] rounded-full scale-120"></div>
 
     <div class="relative w-72 h-96 md:w-95 md:h-130">
       <div

@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import jsonExpEn from '@data/en/experience.json'
 import jsonExpFr from '@data/fr/experience.json'
-import { reactive, inject } from 'vue'
+import { computed } from 'vue'
 
-const lang = inject('lang') as string
-const localJson = reactive<Experience[]>([])
+import { useLanguage } from '@/composables/LangKey'
+
+const { currentLang } = useLanguage()
 interface Experience {
   title: string
   company: string
@@ -14,18 +15,22 @@ interface Experience {
   tasks: string[]
 }
 
-if (lang === 'en') {
-  Object.assign(localJson, jsonExpEn)
-} else if (lang === 'fr') {
-  Object.assign(localJson, jsonExpFr)
-}
+const localJson = computed<Experience[]>(() => {
+  return currentLang.value === 'fr' ? jsonExpFr : jsonExpEn
+})
 </script>
 
 <template>
   <div>
     <div class="mb-16 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight uppercase">
-        Working <span class="text-blue-500">Experience</span>
+      <h2
+        v-if="currentLang === 'en'"
+        class="text-3xl md:text-4xl font-bold text-white tracking-tight uppercase"
+      >
+        Work <span class="text-blue-500">Experience</span>
+      </h2>
+      <h2 v-else class="text-3xl md:text-4xl font-bold text-white tracking-tight uppercase">
+        <span class="text-blue-500">Expérience</span> Professionnelle
       </h2>
       <div class="h-1 w-20 bg-blue-600 mx-auto mt-4 rounded-full"></div>
     </div>
@@ -44,10 +49,16 @@ if (lang === 'en') {
 
         <div class="grid grid-cols-1 md:grid-cols-[160px_1fr] gap-4 md:gap-8">
           <div
-            v-if="item.company == 'BPCE'"
+            v-if="item.company == 'BPCE' && currentLang === 'en'"
             class="text-white font-medium pt-1 group-hover:text-blue-400 transition-colors"
           >
             2024 — Present
+          </div>
+          <div
+            v-else-if="item.company == 'BPCE' && currentLang === 'fr'"
+            class="text-white font-medium pt-1 group-hover:text-blue-400 transition-colors"
+          >
+            2024 — Présent
           </div>
           <div
             v-else-if="item.company == 'Tediber'"

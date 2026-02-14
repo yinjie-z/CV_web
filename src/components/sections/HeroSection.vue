@@ -3,10 +3,9 @@ import jsonHeroEn from '@data/en/hero.json'
 import jsonHeroFr from '@data/fr/hero.json'
 import ProfileImage from '@/components/common/ProfileImage.vue'
 import QuickFacts from '@/components/sections/QuickFactSection.vue'
-import { reactive, inject } from 'vue'
+import { computed } from 'vue'
+import { useLanguage } from '@/composables/LangKey'
 
-const lang = inject('lang') as string
-const localJson = reactive<Hero>({} as Hero)
 interface Hero {
   name: string
   title: string
@@ -14,11 +13,10 @@ interface Hero {
   stack: string[]
 }
 
-if (lang === 'en') {
-  Object.assign(localJson, jsonHeroEn)
-} else if (lang === 'fr') {
-  Object.assign(localJson, jsonHeroFr)
-}
+const { currentLang } = useLanguage()
+const localJson = computed<Hero>(() => {
+  return currentLang.value === 'fr' ? jsonHeroFr : jsonHeroEn
+})
 </script>
 
 <template>
@@ -49,7 +47,8 @@ if (lang === 'en') {
           <button
             class="bg-blue-700 hover:bg-blue-600 text-white px-8 py-3 rounded-md font-semibold transition-all"
           >
-            Downaload CV
+            <a v-if="currentLang === 'en'" href="/public/CV_ENG.pdf" target="_blank">Download CV</a>
+            <a v-else href="/public/CV_FR.pdf" target="_blank">Télécharger CV</a>
           </button>
         </div>
 
@@ -58,7 +57,7 @@ if (lang === 'en') {
         </div>
       </div>
 
-      <div class="relative">
+      <div class="hidden md:block">
         <ProfileImage />
       </div>
     </div>

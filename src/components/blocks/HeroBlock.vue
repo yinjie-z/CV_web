@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import HeroSection from '@/components/sections/HeroSection.vue'
 import ScrollIndicator from '../common/ScrollIndicator.vue'
+import ToggleLanguageButton from '@/components/common/ToggleLanguageButton.vue'
 </script>
 
 <template>
@@ -18,5 +19,6 @@ import ScrollIndicator from '../common/ScrollIndicator.vue'
       <HeroSection />
     </div>
     <ScrollIndicator />
+    <ToggleLanguageButton />
   </section>
 </template>

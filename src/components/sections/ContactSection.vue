@@ -5,20 +5,19 @@ import IconEmail from '@/components/common/icons/IconEmail.vue'
 import IconGithub from '@/components/common/icons/IconGithub.vue'
 import IconLinkedin from '@/components/common/icons/IconLinkedin.vue'
 
-import { reactive, inject } from 'vue'
+import { computed } from 'vue'
+import { useLanguage } from '@/composables/LangKey'
 
-const lang = inject('lang') as string
-const localJson = reactive<Contact[]>([])
+const { currentLang } = useLanguage()
 interface Contact {
   tool: string
   link: string
 }
 
-if (lang === 'en') {
-  Object.assign(localJson, jsonContEn)
-} else if (lang === 'fr') {
-  Object.assign(localJson, jsonContFr)
-}
+const localJson = computed<Contact[]>(() => {
+  return currentLang.value === 'fr' ? jsonContFr : jsonContEn
+})
+
 const formatDisplayLink = (link: string) => {
   return link.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')
 }
@@ -34,12 +33,20 @@ const getIcon = (tool: string) => {
 
 <template>
   <div>
-    <div class="mb-12 text-center">
+    <div v-if="currentLang === 'en'" class="mb-12 text-center">
       <h2 class="text-3xl font-bold text-white tracking-tight uppercase">
         Get in <span class="text-blue-500">Touch</span>
       </h2>
       <p class="text-slate-500 mt-2 font-light">
         Available for innovative projects and technical discussions.
+      </p>
+    </div>
+    <div v-else class="mb-12 text-center">
+      <h2 class="text-3xl font-bold text-white tracking-tight uppercase">
+        <span class="text-blue-500">Contact</span>
+      </h2>
+      <p class="text-slate-500 mt-2 font-light">
+        Disponible pour des projets innovants et des discussions techniques.
       </p>
     </div>
 

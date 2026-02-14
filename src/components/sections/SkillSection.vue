@@ -1,28 +1,32 @@
 <script setup lang="ts">
 import jsonSkillEn from '@data/en/skills.json'
 import jsonSkillFr from '@data/fr/skills.json'
-import { reactive, inject } from 'vue'
+import { computed } from 'vue'
 import LanguageSection from './LanguageSection.vue'
+import { useLanguage } from '@/composables/LangKey'
 
-const lang = inject('lang') as string
-const localJson = reactive<Skill[]>([])
 interface Skill {
   category: string
   skills: string[]
 }
 
-if (lang === 'en') {
-  Object.assign(localJson, jsonSkillEn)
-} else if (lang === 'fr') {
-  Object.assign(localJson, jsonSkillFr)
-}
+const { currentLang } = useLanguage()
+const localJson = computed<Skill[]>(() => {
+  return currentLang.value === 'fr' ? jsonSkillFr : jsonSkillEn
+})
 </script>
 
 <template>
   <div>
     <div class="mb-16 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight uppercase">
+      <h2
+        v-if="currentLang === 'en'"
+        class="text-3xl md:text-4xl font-bold text-white tracking-tight uppercase"
+      >
         Technical <span class="text-blue-500">Stack</span>
+      </h2>
+      <h2 v-else class="text-3xl md:text-4xl font-bold text-white tracking-tight uppercase">
+        <span class="text-blue-500">Compétences</span> Techniques
       </h2>
       <div class="h-1 w-20 bg-blue-600 mx-auto mt-4 rounded-full"></div>
     </div>

@@ -1,28 +1,32 @@
 <script setup lang="ts">
 import jsonPrjEn from '@data/en/projects.json'
 import jsonPrjFr from '@data/fr/projects.json'
-import { reactive, inject } from 'vue'
+import { computed } from 'vue'
+import { useLanguage } from '@/composables/LangKey'
 
-const lang = inject('lang') as string
-const localJson = reactive<Project[]>([])
+const { currentLang } = useLanguage()
 interface Project {
   title: string
   description: string
   stack: string[]
 }
 
-if (lang === 'en') {
-  Object.assign(localJson, jsonPrjEn)
-} else if (lang === 'fr') {
-  Object.assign(localJson, jsonPrjFr)
-}
+const localJson = computed<Project[]>(() => {
+  return currentLang.value === 'fr' ? jsonPrjFr : jsonPrjEn
+})
 </script>
 
 <template>
   <div>
     <div class="mb-16 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight uppercase">
+      <h2
+        v-if="currentLang === 'en'"
+        class="text-3xl md:text-4xl font-bold text-white tracking-tight uppercase"
+      >
         Selected <span class="text-blue-500">Projects</span>
+      </h2>
+      <h2 v-else class="text-3xl md:text-4xl font-bold text-white tracking-tight uppercase">
+        <span class="text-blue-500">Projets</span> Sélectionnés
       </h2>
       <div class="h-1 w-20 bg-blue-600 mx-auto mt-4 rounded-full"></div>
     </div>

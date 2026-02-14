@@ -1,43 +1,43 @@
 [
   {
-    "title": "Senior DevOps & Backend Engineer",
+    "title": "Ingénieur DevOps & Backend Senior",
     "company": "BPCE",
     "city": "Paris, France",
-    "startDate": "May 2024",
-    "endDate": "Present",
+    "startDate": "Mai 2024",
+    "endDate": "Présent",
     "tasks": [
-      "Designed and operated secure CI/CD infrastructure compliant with enterprise-level security standards, enabling frequent production releases.",
-      "Developed Python automation APIs to reduce manual mainframe operations by 400+ incidents per year.",
-      "Built and deployed web services on OpenShift, improving service availability and user autonomy.",
-      "Implemented Ansible automation for mainframe certificate management with full audit traceability.",
-      "Collaborated with security and infrastructure teams to define architecture decisions focused on scalability and compliance."
+      "Conception et exploitation d'infrastructures CI/CD sécurisées conformes aux standards bancaires, permettant des mises en production fréquentes.",
+      "Développement d'APIs d'automatisation en Python, réduisant les interventions manuelles sur Mainframe de plus de 400 incidents par an.",
+      "Déploiement de services web sur OpenShift, améliorant la disponibilité des services et l'autonomie des utilisateurs.",
+      "Mise en œuvre de l'automatisation Ansible pour la gestion des certificats Mainframe avec traçabilité complète d'audit.",
+      "Collaboration avec les équipes sécurité et infrastructure pour définir des choix d'architecture axés sur la scalabilité et la conformité."
     ]
   },
   {
-    "title": "DevOps Engineer",
+    "title": "Ingénieur DevOps",
     "company": "Tediber",
     "city": "Paris, France",
-    "startDate": "Apr. 2023",
-    "endDate": "Apr. 2024",
+    "startDate": "Avril 2023",
+    "endDate": "Avril 2024",
     "tasks": [
-      "Optimized PHP API performance and reduced response time through SQL and system-level enhancements.",
-      "Reduced Docker image build times by optimizing image layers and CI caching strategies.",
-      "Built automation scripts for cloud storage provisioning and lifecycle rules using Python.",
-      "Managed and scaled GitLab CI runners on GKE, ensuring highly available pipeline executions.",
-      "Implemented migrations to Cloud SQL and managed production-grade CI/CD workflows."
+      "Optimisation des performances d'APIs PHP et réduction du temps de réponse via des améliorations SQL et système.",
+      "Réduction des temps de build Docker par l'optimisation des couches (layers) et des stratégies de cache CI.",
+      "Développement de scripts d'automatisation Python pour le provisionnement et la gestion du cycle de vie du stockage Cloud.",
+      "Gestion et mise à l'échelle de runners GitLab CI sur GKE, garantissant une haute disponibilité des pipelines.",
+      "Réalisation de migrations vers Cloud SQL et gestion de workflows CI/CD de niveau production."
     ]
   },
   {
-    "title": "Junior DevOps / Python Developer",
+    "title": "Ingénieur DevOps Junior & Développeur Python",
     "company": "Worldline",
     "city": "Lille, France",
-    "startDate": "Mar. 2020",
-    "endDate": "Apr. 2023",
+    "startDate": "Mars 2020",
+    "endDate": "Avril 2023",
     "tasks": [
-      "Designed and maintained CI/CD pipelines with GitLab CI across multi-environment deployments.",
-      "Administered monitoring systems using Zabbix and Grafana for production reliability.",
-      "Contributed to application-level automation in Python and Golang.",
-      "Oversaw container orchestration via Kubernetes and Helm in a production environment."
+      "Conception et maintenance de pipelines CI/CD avec GitLab CI pour des déploiements multi-environnements.",
+      "Administration des systèmes de monitoring via Zabbix et Grafana pour garantir la fiabilité de la production.",
+      "Contribution à l'automatisation applicative en Python et Golang.",
+      "Supervision de l'orchestration de conteneurs via Kubernetes et Helm en environnement de production."
     ]
   }
 ]

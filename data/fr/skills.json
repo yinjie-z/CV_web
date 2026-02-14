@@ -1,29 +1,29 @@
 [
   {
     "category": "Cloud & Infrastructure",
-    "skills": ["GCP(Cloud Run, GKE, Cloud Storage)", "Openshift", "Docker", "Kubernetes"]
+    "skills": ["GCP (Cloud Run, GKE, Cloud Storage)", "Openshift", "Docker", "Kubernetes"]
   },
   {
-    "category": "CI/CD & Automation",
+    "category": "CI/CD & Automatisation",
     "skills": [
       "Jenkins",
-      "Gitlab CI",
+      "GitLab CI",
       "XL Deploy",
       "XL Release",
       "Ansible",
-      "Automation Scripting(Python)"
+      "Scripting & Automatisation (Python)"
     ]
   },
   {
-    "category": "Languages & Development",
-    "skills": ["Python", "Golang", "PHP", "Bash", "REST APIs", "Vue.js"]
+    "category": "Langages & Développement",
+    "skills": ["Python", "Golang", "PHP", "Bash", "APIs REST", "Vue.js"]
   },
   {
-    "category": "Security & Monitoring",
-    "skills": ["Zabbix", "Grafana", "ELK Stack"]
+    "category": "Sécurité & Monitoring",
+    "skills": ["Zabbix", "Grafana", "Stack ELK"]
   },
   {
     "category": "Mainframe",
-    "skills": ["z/OS", "Terminal 3270", "Zoau", "JCL"]
+    "skills": ["z/OS", "Terminal 3270", "ZOAU", "JCL"]
   }
 ]
