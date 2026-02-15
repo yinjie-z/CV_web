@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import jsonHeroEn from '@data/en/hero.json'
 import jsonHeroFr from '@data/fr/hero.json'
+
+import DownloadButton from '../common/DownloadButton.vue'
 import ProfileImage from '@/components/common/ProfileImage.vue'
 import QuickFacts from '@/components/sections/QuickFactSection.vue'
 import { computed } from 'vue'
@@ -44,12 +46,7 @@ const localJson = computed<Hero>(() => {
         </div>
 
         <div class="flex gap-4">
-          <button
-            class="bg-blue-700 hover:bg-blue-600 text-white px-8 py-3 rounded-md font-semibold transition-all"
-          >
-            <a v-if="currentLang === 'en'" href="/public/CV_ENG.pdf" target="_blank">Download CV</a>
-            <a v-else href="/public/CV_FR.pdf" target="_blank">Télécharger CV</a>
-          </button>
+          <DownloadButton />
         </div>
 
         <div class="mt-12">

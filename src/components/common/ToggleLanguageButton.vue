@@ -4,7 +4,7 @@ import { useLanguage } from '@/composables/LangKey'
 const { currentLang, toggleLang } = useLanguage()
 </script>
 <template>
-  <div class="fixed top-6 right-6 z-50">
+  <div class="fixed top-6 right-8 z-50">
     <div
       class="relative flex items-center p-1 rounded-full bg-white/5 backdrop-blur-md border border-white/10 shadow-lg"
     >
